@@ -1,0 +1,31 @@
+html, body { margin: 0; height: 100%; overflow: hidden; background: #1e2730; color: #fff; font: 14px system-ui, sans-serif; }
+body { touch-action: none; user-select: none; -webkit-user-select: none; }
+[hidden] { display: none !important; }
+
+canvas { position: fixed; inset: 0; width: 100%; height: 100%; }
+
+/* Toolbar */
+header { position: fixed; top: 0; left: 0; right: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  padding: calc(8px + env(safe-area-inset-top, 0px)) 10px 8px; background: rgba(20, 28, 36, .7); }
+button, select { font: inherit; color: #fff; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .45); border-radius: 6px; padding: 6px 10px; }
+option { color: #000; }
+#vz { min-width: 5.2em; font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+#vz.up { color: #7be08a; }
+#vz.down { color: #ff8a7a; }
+#windArrow { display: inline-block; font-size: 18px; }
+
+#help { position: fixed; bottom: 10px; left: 0; right: 0; margin: 0; text-align: center; text-shadow: 0 1px 3px #000; pointer-events: none; }
+
+/* Touch pads: a square touch area, a rail showing the axes in use (data-axes = x, y or xy) and a knob following the finger */
+.touch { display: none; }
+.pad { position: fixed; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); width: 150px; height: 150px; }
+#padL { left: 20px; }
+#padR { right: 20px; }
+.pad::before { content: ''; position: absolute; inset: 0; margin: auto; border-radius: 28px; background: rgba(255, 255, 255, .14); border: 2px solid rgba(255, 255, 255, .5); }
+.pad[data-axes="x"]::before { height: 56px; }
+.pad[data-axes="y"]::before { width: 56px; }
+.pad[data-axes="xy"]::before { border-radius: 50%; }
+.pad i { position: absolute; left: 50%; top: 50%; width: 52px; height: 52px; margin: -26px; border-radius: 50%; background: #f5c24b; border: 2px solid #fff; box-sizing: border-box; pointer-events: none; }
+
+@media (any-pointer: coarse) { .touch { display: block; } }   /* any touch screen, including a laptop with one */
+@media (pointer: coarse) { #help { display: none; } }

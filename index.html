@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Thermal Core</title>
+<meta name="description" content="A tiny paragliding trainer: find the core of an invisible thermal by listening to the vario.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="view"></canvas>
+
+<header>
+  <output id="vz">0.0 m/s</output>
+  <button id="new">New thermal</button>
+  <button id="show">Show thermal</button>
+  <button id="hint">Hint</button>
+  <select id="wind" aria-label="Wind">
+    <option value="0">No wind</option>
+    <option value="2">Light wind</option>
+    <option value="5">Strong wind</option>
+  </select>
+  <span id="windArrow" hidden>➤</span>
+  <select id="controls" class="touch" aria-label="Controls">
+    <option value="sticks">Two sticks</option>
+    <option value="joystick">Joystick</option>
+    <option value="brakes">Two brakes</option>
+  </select>
+  <button id="sound">Sound on</button>
+</header>
+
+<p id="help">← → turn · ↑ speed bar · ↓ brakes</p>
+
+<!-- Touch controls: what each pad does depends on the selected mode (see game.js) -->
+<div id="padL" class="pad touch"><i></i></div>
+<div id="padR" class="pad touch"><i></i></div>
+
+<script src="game.js"></script>
+</body>
+</html>
