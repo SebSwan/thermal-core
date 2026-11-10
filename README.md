@@ -3,6 +3,11 @@
 A tiny paragliding trainer. An invisible thermal is dropped at random on an aerial photo; fly around and find its core by
 listening to the vario.
 
+Play it: https://sebswan.github.io/thermal-core/
+
+This is the bare-bones version of [King of the Lake](https://www.spots.guru/kingofthelake/), a full paragliding game over
+Lake Annecy with real thermals, routes around the lake and an online leaderboard.
+
 No dependencies and no build step: open `index.html` in a browser, or serve the folder with any static server
 (`python3 -m http.server`).
 
